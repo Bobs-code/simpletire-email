@@ -1,0 +1,222 @@
+Delivered-To: bob.griff.29@gmail.com
+Received: by 2002:a98:8181:0:b0:146:e97c:e760 with SMTP id 1csp7124286eic;
+        Tue, 7 Jun 2022 07:14:05 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJyOyU2GUzjZPv82lLeviuiQybv0HwPKyUGdonIamW11FtRfp8aCirdcrP7kkKBkkhHK+toU
+X-Received: by 2002:a05:6214:2421:b0:468:58c5:697 with SMTP id gy1-20020a056214242100b0046858c50697mr15899730qvb.8.1654611245615;
+        Tue, 07 Jun 2022 07:14:05 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1654611245; cv=none;
+        d=google.com; s=arc-20160816;
+        b=g2wcN4m8hJub2JD/GUafKTz7CwhBgvy+wh6wpZPpcdFneEsicZTbtfOnwXaN2sdSVN
+         c4ns52O6cx1bN2WwmdeQeZd6B5QMZZPl9mi6dr5rwZW3x/YkD9q3UBoU778ZSwr0KVyd
+         TGf2ESNEncYK5FwOKaTesZk++WuR93639OQ2J0YyHvtrIIY04m4ELg5LRbE6IIQ+S6S/
+         XeMwC26SYfV1m+Jjbsn47yvTLNxERqVy81z3SbcOy3nsE5/6++742+nCEHxsfSA9fQRU
+         R2fGPv2dzxsjjCyHnNC4kre8LGBvuN7vXQWZopKYBU6fVSyETia5M5NrGGlJ4ZSVBmzS
+         TBQw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:precedence:mime-version:subject:message-id:to:reply-to
+         :from:date:list-unsubscribe:dkim-signature:dkim-signature;
+        bh=YeglcGXfwZumeQBvl1feZsgn5JauHTvVXsh6S+H64yM=;
+        b=tpjG/sgvJFH+YvhBHMRfNbE1VUNsXR0z4vm5/TSnl19mdi3dmqM7iFBLWLhQhwNNx6
+         q/WqUJIS4eEFjm/Bk9WG58Vsnsm/fBAa75GM/7Uy/Yq1W4SOTgwj4q6enCp3SbXGNN4L
+         iXkIdjw18w77ZQtZ13XJVqM+oadYSfWecDRWKB8AqXelIDzCB7hAJfzPu9TM6jQKeFnS
+         +eYnLNa6/9HJpqBzkv6uUksjqGl2paiDNTXrji6KQEHqMUxNhbvH1tupEE16qZjtrTHG
+         IBFmddbZaKYzpJaom/sux996kpbf9gb7HkkBLXzakQjuWVVJoslS7zIkWeW9x0lJiWLh
+         BRnA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@bf10x.hubspotemail.net header.s=hs2 header.b=TSoBrLpc;
+       dkim=pass header.i=@simpletire.com header.s=hs2 header.b=GDSsTUSl;
+       spf=pass (google.com: domain of 1axbwminq9xaadslf8h4we4nthm6jzh9t74gvt@bf10x.hubspotemail.net designates 54.174.59.227 as permitted sender) smtp.mailfrom=1axbwminq9xaadslf8h4we4nthm6jzh9t74gvt@bf10x.hubspotemail.net
+Return-Path: <1axbwminq9xaadslf8h4we4nthm6jzh9t74gvt@bf10x.hubspotemail.net>
+Received: from pgg3lh.bf10x.hubspotemail.net (pgg3lh.bf10x.hubspotemail.net. [54.174.59.227])
+        by mx.google.com with ESMTPS id h10-20020a0562140daa00b0044b870ad278si9418439qvh.150.2022.06.07.07.14.05
+        for <bob.griff.29@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 07 Jun 2022 07:14:05 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 1axbwminq9xaadslf8h4we4nthm6jzh9t74gvt@bf10x.hubspotemail.net designates 54.174.59.227 as permitted sender) client-ip=54.174.59.227;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@bf10x.hubspotemail.net header.s=hs2 header.b=TSoBrLpc;
+       dkim=pass header.i=@simpletire.com header.s=hs2 header.b=GDSsTUSl;
+       spf=pass (google.com: domain of 1axbwminq9xaadslf8h4we4nthm6jzh9t74gvt@bf10x.hubspotemail.net designates 54.174.59.227 as permitted sender) smtp.mailfrom=1axbwminq9xaadslf8h4we4nthm6jzh9t74gvt@bf10x.hubspotemail.net
+Received: by 172.16.116.30 with SMTP id axdsfa11nxo7252i5h3lg304q5z450tgh3gm2a;
+        Tue, 7 Jun 2022 14:14:03 GMT
+DKIM-Signature: v=1; s=hs2; d=bf10x.hubspotemail.net;
+         i=@bf10x.hubspotemail.net;
+         h=sender:from:from:reply-to:to:to:cc:cc:subject:subject:list-unsubscribe:form-sub:feedback-id;
+         a=rsa-sha256; c=relaxed/relaxed;
+         bh=YeglcGXfwZumeQBvl1feZsgn5JauHTvVXsh6S+H64yM=;
+         b=TSoBrLpceMjjmXOp/mXc4k66xSPufNIGj/jBoW+sV02vhe3FeuTPOzB/r/awhE
+         Dc1GkHM2VU3BYM3SeXATrKs/KBBFxVu9dubT741MOxQCotBpRSDtC7nvincdfnC
+         hAsXPyIo3Hl8qElWYgYWahOC+CXGqZydcZk5BCJnKzRSIkTxwjiVZFXZjk4hCEp
+         qUkaN1st25e9Mw7+1V3mEBXQBOWOB2+JA5PIMY6O9IUWQEQMjieT9Tm/fGDhebf
+         zuqAqOVXsnBPPcWJdoWqCSCtobWELK2+gbQh9UbRgJtpU7VD1jhFCYj+7RWpZha
+         SysrHrf+GdyWSCOGeE60+Kcrtkow==; q=dns/txt; t=1654611243;
+         x=1654784043;
+DKIM-Signature: v=1; s=hs2; d=simpletire.com; i=@simpletire.com;
+         h=sender:from:from:reply-to:to:to:cc:cc:subject:subject:list-unsubscribe:form-sub:feedback-id;
+         a=rsa-sha256; c=relaxed/relaxed;
+         bh=YeglcGXfwZumeQBvl1feZsgn5JauHTvVXsh6S+H64yM=;
+         b=GDSsTUSlB1MOv8u8FBCMYLHiuc7u5C9fZdhrS9hmHzN6zARw+pti88pU2rCj87
+         tlyZGyWfAI2x0Hzog5nc1qZ5t9zpivS3inak16fM6zcTG7qr+/Kk7qST7YmqwjO
+         8+u31mW9C0PMaa64VtjALlRFtk7LzAWqE951MkvYVpBzkkvyxlMmhQ5ptHqCtgr
+         x0y9MPzWDSc7yfatXP5fHJGkaRs17VqF8ON1zW0rmqVHevjdTiq1JL90SSKnx93
+         KbVa+jV2fYi12YEReFLlcJ0LOWpV0tZbRhM3QGcvqh6BftBBmHEWCzLOuwLvoLA
+         bL1gLW1/xGxxs7H28HugQ28fLC7A==; q=dns/txt; t=1654611243;
+         x=1654784043;
+Return-Path: <1axbwminq9xaadslf8h4we4nthm6jzh9t74gvt@bf10x.hubspotemail.net>
+X-HS-Cid: 1axe4nvbafpivupaz0cnvlknicfamn6jyoo6rd
+List-Unsubscribe: <mailto:1axc1xicuhjt26u9pupgc9svcgtn1818t75yl1@bf10x.hubspotemail.net?subject=unsubscribe>
+Date: Tue, 7 Jun 2022 10:14:03 -0400
+From: SimpleTire <info@simpletire.com>
+Reply-To: info@simpletire.com
+To: bob.griff.29@gmail.com
+Message-ID: <1654610801018.8778cda2-a8a3-4e02-98a2-c5571d3d1c6f@bf10x.hubspotemail.net>
+Subject: Shop new arrivals Up to 20% off 💸
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="----=_Part_1670385_24378454.1654611243288"
+Precedence: bulk
+X-Report-Abuse-To: abuse@hubspot.com (see https://policy.hubspot.com/abuse-complaints)
+Feedback-ID: aebujbn:aiduluam:airvv:HubSpot
+
+------=_Part_1670385_24378454.1654611243288
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C
+
+Thousands of tires
+up to 20% off.
+
+Shop now (https://hs.simpletire.com/e3t/Ctc/ZQ+113/cjH0X04/VWpvN75YYJD-V56D=
+rL39VJY4W430FVB4L0vmrN4sL4dy3pdrLV1-WJV7CgFLQW7hKq2M5yJKg_W5xKYD516GzFwW13V=
+qm41FgVfzW2f3ls54CzlNcW8fqkhS4KC13dN8X6lXhr2fcsW5rP12S3FqJ7sW6qzJTm89h-7HW8=
+3jZN_16RMXfW55r7_w6Z1yV_W4khDJY5hBKRsF37wNfL-r-YW36jKRr8n3lc9W8NL8PS5SL7k5W=
+3HzLwC6TN3msN4BBn3HzNN-LW6R9TK34660qJW7m_c1N1fRB8dV5CXnW8bDgkJW21CRzj4vh4fW=
+W1MFYtR3jpXQCW25gn2J1SMRsyW50Rlwl42dH_8V5LHHk1PDF07W6dJ3jl8t8RfBW5w-J1D57Zs=
+dS3cd_1 )
+
+Up to $100 off with install.
+
+Plus get your tires shipped
+
+to and installed by your
+
+local shop.
+
+Pre-pay and save
+
+Pre-pay for tire installation at checkout (pricing based on shop selection)
+
+and save time and money in the process. Learn more (https://hs.simpletire.c=
+om/e3t/Ctc/ZQ+113/cjH0X04/VWpvN75YYJD-V56DrL39VJY4W430FVB4L0vmrN4sL4dy3pdrL=
+V1-WJV7CgFLQW7hKq2M5yJKg_W5xKYD516GzFwW13Vqm41FgVfzW2f3ls54CzlNcW8fqkhS4KC1=
+3dN8X6lXhr2fcsW5rP12S3FqJ7sW6qzJTm89h-7HW83jZN_16RMXfW55r7_w6Z1yV_W4khDJY5h=
+BKRsF37wNfL-r-YW36jKRr8n3lc9W8NL8PS5SL7k5W3HzLwC6TN3msN4BBn3HzNN-LW6R9TK346=
+60qJW7m_c1N1fRB8dV5CXnW8bDgkJW21CRzj4vh4fWW1MFYtR3jpXQCW25gn2J1SMRsyW50Rlwl=
+42dH_8V5LHHk1PDF07W6dJ3jl8t8RfBW5w-J1D57ZsdS3cd_1 )
+
+How to read your
+
+tire size.
+
+P
+
+Passenger
+
+225
+
+Tire width (in millimetres)
+
+65
+
+Aspect ratio
+
+R
+
+Radial Construction
+
+17
+
+Rim size
+
+made for a specific tire size
+
+Learn more
+
+(https://hs.simpletire.com/e3t/Ctc/ZQ+113/cjH0X04/VWpvN75YYJD-V56DrL39VJY4W=
+430FVB4L0vmrN4sL4c35mNXrV3Zsc37Cg-84W7dxG7y2tSd5pW5tT1gk16R0tfW4tD9PX4Wy0g6=
+VbnxXz3LzTNxW6Y3qYQ3XVjPzW8FL_ps180VkXW8l_pCB7fdhxPW8Bk87J6FgQ0BW34krBH1WDH=
+HTW32TJ5F3N9txTW8FpKQn4gR91gV8v_7p1mnz6mW49PyVQ4W-hK4W4-B7-n22GkrbW7vtmvb24=
+D0QKW2_p6C635tnQsV3B_b42_Rd7hW5JbnSf4DbDWJW8jcLxP37DWbqW3CQ2zX71VxMFVbK60Z5=
+DCwJ4W2p6V2x1yZrP0W901yq02Kkxy0W8yCbbg6pMM2gW1DYZcg1qWmTvW9bGvPT7TVnV6W4B1r=
+Tk3r3v8RVvvCj54YKCQXW3g_Hd_1C_499W6YGj9426Dk4pW36KrPh6ny-06W33YVKC9gw5Hj3pQ=
+q1 )
+
+Replacing tires is now
+
+way simple.
+
+Shop now (https://hs.simpletire.com/e3t/Ctc/ZQ+113/cjH0X04/VWpvN75YYJD-V56D=
+rL39VJY4W430FVB4L0vmrN4sL4dy3pdrLV1-WJV7CgFLQW7hKq2M5yJKg_W5xKYD516GzFwW13V=
+qm41FgVfzW2f3ls54CzlNcW8fqkhS4KC13dN8X6lXhr2fcsW5rP12S3FqJ7sW6qzJTm89h-7HW8=
+3jZN_16RMXfW55r7_w6Z1yV_W4khDJY5hBKRsF37wNfL-r-YW36jKRr8n3lc9W8NL8PS5SL7k5W=
+3HzLwC6TN3msN4BBn3HzNN-LW6R9TK34660qJW7m_c1N1fRB8dV5CXnW8bDgkJW21CRzj4vh4fW=
+W1MFYtR3jpXQCW25gn2J1SMRsyW50Rlwl42dH_8V5LHHk1PDF07W6dJ3jl8t8RfBW5w-J1D57Zs=
+dS3cd_1 )
+
+Free shipping
+
+available (https://hs.simpletire.com/e3t/Ctc/ZQ+113/cjH0X04/VWpvN75YYJD-V56=
+DrL39VJY4W430FVB4L0vmrN4sL4dS3pds1V1-WJV7CgXQ6W6j9_7d3YFTh8W2g1Q6C1pC2JpW3X=
+9Wg05QlwkvW1f6Brp2XYM22N2zvtzK-B1n8W4b-Wgq12Y1T3N7dywKX7fBNnW7BNhk66V6K_VW8=
+fFZZC24q6KPW4XL0F0943zr4W4txT8h2v8tNmW352qR_2lFTrHVrKwSR6c2CnfW5LbZb_51dgy-=
+W3b32RW70wl5GW1KlbnB2ww6wwW6H24Sg1n3PtXW4NGVzv17Pbx9W1qpnyJ8kSVH0W59gqG31xn=
+TfPW4z2DZH1LGR4fW5Z261l1Dh4xJVJSTJf7jPkQvW5-Z1fn8sY3vmW6Rn7pF1k9xpPN8zV7cJt=
+t40FW6F4-5L2TQlfZW1Dw8BN4hrncb3bS21 )
+
+Easy
+
+Returns (https://hs.simpletire.com/e3t/Ctc/ZQ+113/cjH0X04/VWpvN75YYJD-V56Dr=
+L39VJY4W430FVB4L0vmrN4sL4dS3pds1V1-WJV7CgZY7W56RsRT8jg6vzW5kP27d9b44DTW5Q-H=
+2K8fR-zrW2ryPQ64mYCWWW1XQKMT5nz8sGW94NZ411LC6lkW7zf7wG7-GksqN3Rfd6MzPyqPVCK=
+MDV3wh79JW6KQSV54j2sK1W4dynCk174jTpVz-Rc27lghcXN6c9yfw1SXq6W8VRV6x6nFk8-W1Q=
+3tT41pvf64W6CHQ5D48kn5fW8N7TDV8Vt6FYW5HZYWL6_bNtSW7tRl0g70_MVNVsLfF35W3Vl7W=
+5FnbqW6sTHNBW5zmkj26QmFGLW1Y-8-52KhbTWW2xPd-P7LnySGW8mdQPD3SV2MWW7gtXBG6jBQ=
+MXW76P9023pj1wVW4GDjQM6pGn303fC41 )
+
+Customer
+
+Support (https://hs.simpletire.com/e3t/Ctc/ZQ+113/cjH0X04/VWpvN75YYJD-V56Dr=
+L39VJY4W430FVB4L0vmrN4sL4dy3pdrLV1-WJV7CgCY0W5yKQdS739tnCW6wn_SG51lK2yW4QpR=
+Q84Q4lhmMT0KcKqg6qSVKddb124f1nNW4rJZRG76T3MzW4tXt0z2v89V9W3CmY-w4PvMrkW96Gc=
+B45YLBhrVhlgvt17ZZmRW8RFj-s6gw7c4MmBcYmR3WXzW6wx93Y39pKbrN98Wjx2RKrxYW5N8zx=
+V3Db8Z4W6C4Zqy88Xx-2W3kMVb593TjhlW6gj28M7zHFzxW1hxQnG3z_T5fW2s2nJC1M7b80W33=
+yKYF7MHVsxVrKWBC6xpH7NW7pN-XP7tWR1FW7plql269jS6mW4ZJK4y763KPBW16MmX937pT4t3=
+hks1 )
+
+=C2=A9 2022 SimpleTire. All Rights Reserved.
+
+HEADQUARTERS
+
+SimpleTire
+
+8 Neshaminy Interplex Drive
+
+Trevose, Pennsylvania 19053-6974
+
+Unsubscribe (https://hs.simpletire.com/hs/manage-preferences/unsubscribe?la=
+nguagePreference=3Den&d=3DVnfmCy5y952PVR8_mR1Jzb4NW3M2fR624ZZ89W3zbV8Y3Fbt5=
+qW6xxLW51fkvKFVkF7JP8yBVH5W7Gysss4NK9YpW6dR4PW4YncF2W8hQq-c1MSMWMW7jDJDW82n=
+8jVN17dCJSL9fX2W1G9q6t4_0rKN0&v=3D3&_hsenc=3Dp2ANqtz-_i5wfIpLfY3t124NyI1UnZ=
+cFZ88tm-IKFTlp4WUHkYuNfXbMzdrTx85fYpPYnrxf6Lgm8SJbfsdTnh7f1DYCblIdvyYg&_hsm=
+i=3D215529996 )
+Manage subscriptions (https://hs.simpletire.com/hs/manage-preferences/unsub=
+scribe-all?languagePreference=3Den&d=3DVnfmCy5y952PVR8_mR1Jzb4NW3M2fR624ZZ8=
+9W3zbV8Y3Fbt5qW6xxLW51fkvKFVkF7JP8yBVH5W7Gysss4NK9YpW6dR4PW4YncF2W8hQq-c1MS=
+MWMW7jDJDW82n8jVN17dCJSL9fX2W1G9q6t4_0rKN0&v=3D3&_hsenc=3Dp2ANqtz-_i5wfIpLf=
+Y3t124NyI1UnZcFZ88tm-IKFTlp4WUHkYuNfXbMzdrTx85fYpPYnrxf6Lgm8SJbfsdTnh7f1DYC=
+blIdvyYg&_hsmi=3D215529996 )
+------=_Part_1670385_24378454.1654611243288
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
